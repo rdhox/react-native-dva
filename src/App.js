@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { Platform, BackHandler, StyleSheet, View, Text } from "react-native";
-import { addNavigationHelpers, NavigationActions } from "react-navigation";
+import { NavigationActions } from "react-navigation";
 import { createReduxBoundAddListener } from "react-navigation-redux-helpers";
 import { connect } from "react-redux";
 import Router from "./Router";
@@ -36,11 +36,11 @@ class App extends PureComponent {
   render() {
     const { dispatch, app, router } = this.props,
       addListener = createReduxBoundAddListener("root"),
-      navigation = addNavigationHelpers({
+      navigation = {
         dispatch,
         addListener,
         state: router
-      });
+      };
     return (
       <View style={styles.container}>
         <Router navigation={navigation} />

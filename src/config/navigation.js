@@ -8,6 +8,8 @@ import {
   createReactNavigationReduxMiddleware,
   createNavigationReducer
 } from "react-navigation-redux-helpers";
+// Style
+import { IconMenu } from "../components/menu/Icon";
 // Screens
 import Home from "../views/Home";
 import Page1 from "../views/Page1";
@@ -16,10 +18,34 @@ import Page3 from "../views/Page3";
 
 const HomeNavigator = createBottomTabNavigator(
   {
-    Home: { screen: Home },
-    Page1: { screen: Page1 },
-    Page2: { screen: Page2 },
-    Page3: { screen: Page3 }
+    Home: {
+      screen: Home,
+      navigationOptions: {
+        tabBarLabel: "Home",
+        tabBarIcon: <IconMenu source={require("../assets/menu/home.png")} />
+      }
+    },
+    Page1: {
+      screen: Page1,
+      navigationOptions: {
+        tabBarLabel: "Page1",
+        tabBarIcon: <IconMenu source={require("../assets/menu/page1.png")} />
+      }
+    },
+    Page2: {
+      screen: Page2,
+      navigationOptions: {
+        tabBarLabel: "Page2",
+        tabBarIcon: <IconMenu source={require("../assets/menu/page2.png")} />
+      }
+    },
+    Page3: {
+      screen: Page3,
+      navigationOptions: {
+        tabBarLabel: "Page3",
+        tabBarIcon: <IconMenu source={require("../assets/menu/page3.png")} />
+      }
+    }
   },
   {
     initialRouteName: "Home"

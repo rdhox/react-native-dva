@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import Router from "./router";
+import Router from "./config/router";
 import { connect } from "react-redux";
 
 class App extends PureComponent {

@@ -5,7 +5,7 @@ import { name as appName } from "./app.json";
 
 import dva from "./src/utils/dva";
 import App from "./src/App";
-import { routerMiddleware, routerReducer } from "./src/router";
+import { routerMiddleware, routerReducer } from "./src/config/router";
 import appModel from "./src/models/app";
 
 const app = dva({

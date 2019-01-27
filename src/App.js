@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import Router from "./config/navigation";
+import Router from "config/NavigationConfig";
 import { connect } from "react-redux";
 
 class App extends PureComponent {
@@ -31,12 +31,7 @@ class App extends PureComponent {
   }
 }
 
-const mapStateToProps = state => {
-  const { app, router } = state;
-  return { app, router };
-};
-
-export default connect(mapStateToProps)(App);
+export default connect(({ app, router }) => ({ app, router }))(App);
 
 const getActiveRouteName = navigationState => {
   if (!navigationState) {

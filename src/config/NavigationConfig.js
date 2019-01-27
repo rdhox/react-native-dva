@@ -9,12 +9,12 @@ import {
   createNavigationReducer
 } from "react-navigation-redux-helpers";
 // Style
-import { IconMenu } from "../components/menu/Icon";
+import { IconMenu } from "components/menu/Icon";
 // Screens
-import Home from "../views/Home";
-import Page1 from "../views/Page1";
-import Page2 from "../views/Page2";
-import Page3 from "../views/Page3";
+import Home from "views/Home";
+import Page1 from "views/Page1";
+import Page2 from "views/Page2";
+import Page3 from "views/Page3";
 
 const HomeNavigator = createBottomTabNavigator(
   {

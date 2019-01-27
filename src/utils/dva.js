@@ -1,11 +1,15 @@
 import React from "react";
 import { create } from "dva-core";
 import { Provider, connect } from "react-redux";
-
+import createLoading from "dva-loading";
 export { connect };
 
 export default function(options) {
   const app = create(options);
+
+  // Loading plugin initialisation
+  app.use(createLoading());
+
   // HMR workaround
   if (!global.registered) options.models.forEach(model => app.model(model));
   global.registered = true;
